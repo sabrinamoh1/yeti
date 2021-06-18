@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>  
+<meta charset="UTF-8">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+</head>
+<body>
+<canvas id="myChart"></canvas>
+
+<script>
+var ctx = document.getElementById("myChart");
+
+var myChart = new Chart(ctx, {
+  type: 'scatter',
+  data: {
+    datasets: [
+    	{
+        label: 'Upstroke',
+        data: [{x: 1, y: 2}, {x: 2, y: 4}, {x: 3, y: 8},{x: 4, y: 16}],
+        showLine: true,
+        fill: false,
+        borderColor: 'rgba(0, 200, 0, 1)'
+    	},
+      {
+        label: 'Downstroke',
+        data: [{x: 0.5, y: 3}, {x: 1, y: 4}, {x: 1.5, y: 6}, {x: 2, y: 9}],
+        showLine: true,
+        fill: false,
+        borderColor: 'rgba(200, 0, 0, 1)'
+    	}
+    ]
+  },
+  options: {
+    tooltips: {
+      mode: 'index',
+      intersect: false,
+    },
+    hover: {
+      mode: 'nearest',
+      intersect: true
+    },
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero:true
+        }
+      }]
+    },
+  }
+});
+</script>
+</body>
+</html>

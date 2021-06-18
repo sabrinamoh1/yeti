@@ -1,0 +1,70 @@
+ #console {
+                position: absolute;
+                z-index: 9;
+                background-color: #003152;
+                text-align: center;
+                opacity: 0.8;
+                color: #fff;
+                padding: 1px;
+              }
+
+              #consoleheader {
+                padding: 5px;
+                cursor: move;
+                z-index: 9;
+                background-color: #003152;
+                color: #fff;
+                opacity:1;
+                border-bottom: 1px solid rgba(255,255,255,.25);
+              }
+            .btn{
+                margin-left:10px;
+            }
+            #overlay {
+            position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 2;
+            cursor: pointer;
+          }
+
+          #text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 50px;
+            color: white;
+            transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+          }
+
+          .marquee {
+             width: 250px;
+            margin: 0 auto;
+            white-space: nowrap;
+            overflow: hidden;
+            box-sizing: border-box;
+            background-color:#800000;
+        }
+
+        .marquee span {
+            display: inline-block;
+            padding-left: 100%;  /* show the marquee just outside the paragraph */
+            animation: marquee 15s linear infinite;
+        }
+
+        .marquee span:hover {
+            animation-play-state: paused
+        }
+
+        /* Make it move */
+        @keyframes marquee {
+            0%   { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
