@@ -489,7 +489,7 @@
                     console.log(ProductionArray)
                     
                     production_array= ProductionArray.totalprod[3].pastday
-                    console.log(production_array)
+                    console.log(production_array.slice(1))
                     let production_array_chart= production_array.map(
                     obj => { 
                       return {
@@ -499,8 +499,7 @@
                       }
                     }
                     )
-                    console.log(x)
-                    console.log(y)
+                    
                
                     var Production_array_bar_chart = document.getElementById("ProductionChartPastDay");
                     var Production_Chart_Past_Day = new Chart(Production_array_bar_chart, {
