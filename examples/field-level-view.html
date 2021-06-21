@@ -198,26 +198,95 @@
                   <h4 class="card-title">Field 1</h4>
                   <p class="card-category">
                   </p>
-                  <canvas id="myChart"></canvas> 
+                  <canvas id="FieldProductionChartPastDay"></canvas> 
                   <script>
                     //get json file from server
                     function AutoRefresh() {
                     setTimeout("location.reload(true);", 30000);
                     }
-                    $.getJSON( "https://totalyeti.com/node1/dynacard.php?g=0", function(data) {
+                    $.getJSON( "https://totalyeti.com/Yeti/examples/services/field_sum.php", function(data) {alert( "Loading");
+                    var FieldProductionArray = data;
                     
+                    console.log(FieldProductionArray)
+                    
+                    field_production_array= FieldProductionArray.fieldsum
+                  
+                    /*let production_array_chart= production_array.map(
+                    obj => { 
+                      return {
+                        
+                        "x": obj.WellID                 
+                        "y":obj.value
+                      }
+                    }
+                    */
+                    
+               
+                    var Production_array_bar_chart = document.getElementById("FieldProductionChartPastDay");
+                    var labels = ["W1", "W2", "W3", "W4", "W5"]
+                    var Production_Chart_Past_Day = new Chart(Production_array_bar_chart, {
+                    type: 'bar',
+                    data: {
+                      labels:labels,
+                      datasets: [
+                        {
+                          label: 'Production Summary for past day',
+                          data: [12,15, 7, 20, 5],
+                          backgroundColor: [
+                          'rgba(255, 99, 132, 0.2)',
+                          'rgba(255, 159, 64, 0.2)',
+                          'rgba(255, 205, 86, 0.2)',
+                          'rgba(75, 192, 192, 0.2)',
+                          'rgba(54, 162, 235, 0.2)',
+                          'rgba(153, 102, 255, 0.2)',
+                          'rgba(201, 203, 207, 0.2)'
+                        ],
+                        borderColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(255, 159, 64)',
+                        'rgb(255, 205, 86)',
+                        'rgb(75, 192, 192)',
+                        'rgb(54, 162, 235)',
+                        'rgb(153, 102, 255)',
+                        'rgb(201, 203, 207)'
+                      ],
+                          showLine: true,
+                          fill: false,
+                          borderColor: 'rgba(0, 200, 0, 1)'
+                        },
+                        
+                      ]
+                    },
+                    options: {
+                      tooltips: {
+                        mode: 'index',
+                        intersect: false,
+                      },
+                      hover: {
+                        mode: 'nearest',
+                        intersect: true
+                      },
+                      scales: {
+                        yAxes: [{
+                          ticks: {
+                            beginAtZero:true
+                          }
+                        }]
+                      },
+                    }
+                    });
                     })
                     .done(function(data) {
                       console.log("Success")
                       })
                     .fail(function() {
-                      console.log( "error" );
+                      alert( "error" );
                     })
                     .always(function() {
                       console.log('Finished')
                     });
 
-                  </script>
+                  </script>     
                 </div>
                 <div class="card-footer text-sm-left">
                   <div class="stats">
@@ -246,21 +315,48 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td onclick="document.location.href='https://totalyeti.com/Yeti/examples/field-level-view.html'">A749 </td>
-                      <td>Inactive(display clear) </td>
-                      <td>8748 </td>
-                      <td>74 </td>
-                      <td>96</td>
+                      <td onclick="document.location.href='https://totalyeti.com/Yeti/examples/field-level-view.html'">W1</td>
+                      <td>Active</td>
+                      <td class="td-actions text-center">81</td>
+                      <td class="td-actions text-center">74 </td>
+                      <td class="td-actions text-center">96</td>
                       <!-- make editable after pressing button-->
                       <td contenteditable='true'> Specify</td>                     
                
                     </tr>
                     <tr>
-                      <td><a href="https://totalyeti.com/Yeti/examples/field-level-view.html"></a> A789 </td>
-                      <td>Active(display red)</td>
-                      <td>250</td>
-                      <td>251</td>
-                      <td>252</td>    
+                      <td><a href="https://totalyeti.com/Yeti/examples/field-level-view.html"></a>W2</td>
+                      <td>Active</td>
+                      <td>25</td>
+                      <td>21</td>
+                      <td>52</td>    
+                      <td>Specify</td>
+                     
+                    </tr>
+                    <tr>
+                      <td><a href="https://totalyeti.com/Yeti/examples/field-level-view.html"></a>W3</td>
+                      <td>Active</td>
+                      <td>34</td>
+                      <td>54</td>
+                      <td>22</td>    
+                      <td>Specify</td>
+                     
+                    </tr>
+                    <tr>
+                      <td><a href="https://totalyeti.com/Yeti/examples/field-level-view.html"></a>W4</td>
+                      <td>Active</td>
+                      <td>20</td>
+                      <td>25</td>
+                      <td>22</td>    
+                      <td>Specify</td>
+                     
+                    </tr>
+                    <tr>
+                      <td><a href="https://totalyeti.com/Yeti/examples/field-level-view.html"></a>W5</td>
+                      <td>Active</td>
+                      <td>40</td>
+                      <td>23</td>
+                      <td>54</td>    
                       <td>Specify</td>
                      
                     </tr>

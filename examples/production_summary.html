@@ -502,7 +502,7 @@
                     
                
                     var Production_array_bar_chart = document.getElementById("ProductionChartPastDay");
-                    var labels = ["F1", "F2"]
+                    var labels = ["F1", "F2", "F3", "F4", "F5"]
                     var Production_Chart_Past_Day = new Chart(Production_array_bar_chart, {
                     type: 'bar',
                     data: {
@@ -510,7 +510,7 @@
                       datasets: [
                         {
                           label: 'Production Summary for past day',
-                          data: [21,50],
+                          data: [21,50, 45, 32, 14],
                           backgroundColor: [
                           'rgba(255, 99, 132, 0.2)',
                           'rgba(255, 159, 64, 0.2)',
@@ -587,23 +587,60 @@
                 <table class="table table-hover text-lg-center">
                   <thead class="text-warning">
                     <th>Field</th>
-                    <th>Production Value</th>
-                    <th>Production(To date)</th>
+                    <th>Production(Past Day)</th>
                     <th></th>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Sabrina </td>
-                      <td>256</td>
-                      <td contenteditable='true'>
-       
-                      </td>
-                      <td class="td-actions text-right">
-                        <div class="row float-lg-right">             
+                      <td>F1</td>
+                      <td>21</td>
+        
+                      <td class="td-actions text-left">
+                        <div class="row float-lg-left">             
                           <input type="button"   value="See Field Details" class="btn btn-primary">           
                         </div>                       
                       </td>
-                    </tr>                     
+                    </tr> 
+                    <tr>
+                      <td>F2</td>
+                      <td>50</td>
+                  
+                      <td class="td-actions text-left">
+                        <div class="row float-lg-left">             
+                          <input type="button"   value="See Field Details" class="btn btn-primary">           
+                        </div>                       
+                      </td>
+                    </tr> 
+                    <tr>
+                      <td>F3</td>
+                      <td>45</td>
+                     
+                      <td class="td-actions text-left">
+                        <div class="row float-lg-left">             
+                          <input type="button"   value="See Field Details" class="btn btn-primary">           
+                        </div>                       
+                      </td>
+                    </tr> 
+                    <tr>
+                      <td>F4</td>
+                      <td>32</td>
+                      
+                      <td class="td-actions text-left">
+                        <div class="row float-lg-left">             
+                          <input type="button"   value="See Field Details" class="btn btn-primary">           
+                        </div>                       
+                      </td>
+                    </tr> 
+                    <tr>
+                      <td>F5</td>
+                      <td>14</td>
+                      
+                      <td class="td-actions text-left">
+                        <div class="row float-lg-left">             
+                          <input type="button"   value="See Field Details" class="btn btn-primary">           
+                        </div>                       
+                      </td>
+                    </tr> 
                   </tbody>
                 </table>
               </div>
