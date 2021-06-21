@@ -478,25 +478,39 @@
                   <p class="card-category">
                   </p>
                   <canvas id="ProductionChartPastDay"></canvas> 
-                  <!--<script>
+                  <script>
                     //get json file from server
                     function AutoRefresh() {
                     setTimeout("location.reload(true);", 30000);
                     }
                     $.getJSON( "https://totalyeti.com/Yeti/examples/services/comp_prod.php", function(data) {alert( "Loading");
                     var ProductionArray = data;
+                    
                     console.log(ProductionArray)
-
+                    
+                    production_array= ProductionArray.totalprod[3].pastday
+                    console.log(production_array)
+                    let production_array_chart= production_array.map(
+                    obj => { 
+                      return {
+                        
+                        "x": obj.fieldnum,                       
+                        "y":obj.value
+                      }
+                    }
+                    )
+                    console.log(x)
+                    console.log(y)
                
-                    var ctx = document.getElementById("ProductionChartPastDay");
-                    var myChart = new Chart(ctx, {
+                    var Production_array_bar_chart = document.getElementById("ProductionChartPastDay");
+                    var Production_Chart_Past_Day = new Chart(Production_array_bar_chart, {
                     type: 'bar',
                     data: {
-                      labels:,
+                      labels: [],
                       datasets: [
                         {
                           label: 'Production Summary for past day',
-                          data: ,
+                          data: [21,23],
                           showLine: true,
                           fill: false,
                           borderColor: 'rgba(0, 200, 0, 1)'
@@ -533,7 +547,7 @@
                       console.log('Finished')
                     });
 
-                  </script>-->      
+                  </script>     
                 </div>
                 <div class="card-footer text-sm-left">
                   <div class="stats">
